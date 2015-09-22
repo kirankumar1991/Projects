@@ -1,4 +1,4 @@
-package com.tfsc.kiran.real.time.systems.network.flow;
+package com.tfsc.kiran.real.time.systems.network.flow.impl;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -7,6 +7,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.tfsc.kiran.real.time.systems.network.flow.model.Frame;
+import com.tfsc.kiran.real.time.systems.network.flow.model.Job;
+import com.tfsc.kiran.real.time.systems.network.flow.model.Task;
+import com.tfsc.kiran.real.time.systems.network.flow.util.NumberUtility;
 
 public class IterativeNetworkFlow {
 
@@ -117,8 +122,8 @@ public class IterativeNetworkFlow {
 	private static int computeHyperPeriod(List<Task> taskList) {
 		Set<Integer> periods = new HashSet<Integer>();
 		for (Task task : taskList) {
-			if (!periods.contains(task.period)) {
-				periods.add(task.period);
+			if (!periods.contains(task.getPeriod())) {
+				periods.add(task.getPeriod());
 			}
 		}
 		Integer[] array = periods.toArray(new Integer[periods.size()]);
@@ -131,7 +136,7 @@ public class IterativeNetworkFlow {
 		List<Job> jobList = new LinkedList<Job>();
 		for (int i = 0; i < hyperperiod; i++) {
 			for (Task task : taskList) {
-				if (i % task.period == 0) {
+				if (i % task.getPeriod() == 0) {
 					Job job = new Job(
 							getJobIdForTask(task, taskVsCurrentJobId), i, task);
 					if (job.getReleaseTime() > hyperperiod)

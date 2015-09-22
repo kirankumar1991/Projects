@@ -1,4 +1,4 @@
-package com.tfsc.kiran.real.time.systems.network.flow;
+package com.tfsc.kiran.real.time.systems.network.flow.model;
 
 import java.text.DecimalFormat;
 import java.util.LinkedList;
@@ -14,7 +14,7 @@ public class Frame {
 		return scheduledJobs;
 	}
 
-	Frame(int frameNumber, float frameSize) {
+	public Frame(int frameNumber, float frameSize) {
 		this.frameNumber = frameNumber;
 		this.timeLeft = frameSize;
 	}

@@ -1,7 +1,9 @@
-package com.tfsc.kiran.real.time.systems.network.flow;
+package com.tfsc.kiran.real.time.systems.network.flow.impl;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import com.tfsc.kiran.real.time.systems.network.flow.model.Task;
 
 public class InputParser {
 

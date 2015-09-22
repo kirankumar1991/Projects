@@ -1,4 +1,4 @@
-package com.tfsc.kiran.real.time.systems.network.flow;
+package com.tfsc.kiran.real.time.systems.network.flow.model;
 
 public class Job extends Task {
 
